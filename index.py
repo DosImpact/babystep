@@ -1,20 +1,56 @@
 
-
 """
-
-1. 입력 > a,b, 
-
-
-2. 출력 a+b
+계산기
 """
-
 import sys
 
-a, b = map(int, input().split())  # 입력 1 2
 
-"""
-a, b = map(int, "1 2".split()) 
-a, b = map(int, ["1","2"]) 
-a, b = [1,2]
-"""
-print(a+b)
+def userInput(mesg):
+    res = input(mesg)
+    return res
+
+
+def calBasic():
+    print("enter : [a] [op] [b] >>> ", end="")
+    a, op, b = userInput("").split()
+    a = int(a)
+    b = int(b)
+
+    if op == "+":
+        print(a+b)
+    elif op == "-":
+        print(a-b)
+    elif op == "*":
+        print(a*b)
+    elif op == "/":
+        print(a/b)
+    else:
+        print("Wrong input form")
+
+
+def calBasicPlus():
+    print("enter : [a] [op] [b] >>> ", end="")
+    a, op, b = userInput("").split()
+    a = int(a)
+    b = int(b)
+
+    if op == "**":
+        print(a**b)
+    elif op == "%":
+        print(a % b)
+    elif op == "//":
+        print(a//b)
+    else:
+        print("Wrong input form")
+
+
+while True:
+    choice = int(userInput("PRACTICE ::  1:basic 2:Plus (0:Exit)#"))
+    if choice == 0:
+        break
+    elif choice == 1:
+        calBasic()
+    elif choice == 2:
+        calBasicPlus()
+    else:
+        print("Select again :)")
